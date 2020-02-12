@@ -1,4 +1,5 @@
-FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+# FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+FROM mudphudwang/pytorch-jupyter:bionic-pytorch1.1-cuda10.0-v0
 LABEL maintainer="Edgar Y. Walker <edgar.walker@gmail.com>"
 
 # Deal with pesky Python 3 encoding issue
