@@ -60,7 +60,7 @@ RUN pip3 --no-cache-dir install \
          torch==1.3.1 \
          torchvision==0.4.2 \
          jupyterlab
-         
+
 RUN pip3 --no-cache-dir install datajoint==0.12.4
 
 
@@ -76,4 +76,4 @@ ADD ./jupyter_notebook_config.py /root/.jupyter/
 WORKDIR /notebooks
 
 # By default start running jupyter notebook
-# ENTRYPOINT ["jupyter", "lab", "--allow-root"]
+ENTRYPOINT ["jupyter", "lab", "--allow-root"]
