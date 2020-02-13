@@ -12,5 +12,3 @@ services:
       - "8888:8888"
     volumes:
       - ./notebooks:/notebooks/local_notebooks
-      - /mnt/lab/users/josue/notebooks:/notebooks/lab_notes
-      - /mnt/scratch07:/external
