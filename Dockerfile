@@ -75,4 +75,4 @@ ADD ./jupyter_notebook_config.py /root/.jupyter/
 WORKDIR /notebooks
 
 # By default start running jupyter notebook
-ENTRYPOINT ["jupyter", "lab", "--allow-root"]
+# ENTRYPOINT ["jupyter", "lab", "--allow-root"]
