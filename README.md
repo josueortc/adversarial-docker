@@ -1,5 +1,9 @@
-# Repository for Sinzlab Pytorch Docker image
-This repository contains information and configuration needed to build Docker images for PyTorch development as used in
-Sinz lab. 
+# Repository for Pytorch Docker image
 
-To launch Jupyter Lab using this image, you must properly configure and pass in `JUPYTER_PASSWORD` environment variable.
+Example for building and running the Docker (Using Docker 19.03)
+```
+docker build https://github.com/josueortc/pytorch-docker.git -t my/docker
+docker run -p 8888:8888 --gpus 0 -t my/docker
+```
+
+This will create a jupyter lab
