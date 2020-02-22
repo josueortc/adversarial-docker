@@ -1,4 +1,5 @@
-FROM mudphudwang/pytorch-jupyter:bionic-pytorch1.1-cuda10.0-v0
+#FROM mudphudwang/pytorch-jupyter:bionic-pytorch1.1-cuda10.0-v0
+FROM bethgelab/deeplearning:cuda9.0-cudnn7
 LABEL maintainer="Josue Ortega Caro <josueortc@gmail.com>"
 
 # Deal with pesky Python 3 encoding issue
@@ -39,9 +40,10 @@ RUN apt-get update &&\
 
 WORKDIR /src
 
-RUN pip3 --no-cache-dir install tqdm eagerpy foolbox==2.1.0
-
-RUN pip3 --no-cache-dir install jax jaxlib  #foolbox-native
+RUN pip3 install -U setuptools
+RUN pip3 install --upgrade pip==19.0.1
+RUN pip3 install tqdm foolbox eagerpy
+RUN pip3 install foolbox-native
 
 # Install essential Python packages
 RUN pip3 --no-cache-dir install \
