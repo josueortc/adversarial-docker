@@ -2,7 +2,7 @@ FROM bethgelab/deeplearning:cuda9.0-cudnn7
 
 RUN pip3 install -U setuptools
 RUN pip3 install --upgrade pip==19.0.1
-RUN pip3 install tqdm foolbox eagerpy
+RUN pip3 install tqdm foolbox eagerpy==0.15.0
 RUN pip3 install foolbox-native
 
 #RUN echo "c.NotebookApp.token = u''" >> /usr/.jupyter/jupyter_notebook_config.py
