@@ -41,7 +41,7 @@ WORKDIR /src
 
 RUN pip3 --no-cache-dir install tqdm eagerpy foolbox==2.1.0
 
-RUN pip3 --no-cache-dir install jax jaxlib foolbox-native
+RUN pip3 --no-cache-dir install jax jaxlib  #foolbox-native
 
 # Install essential Python packages
 RUN pip3 --no-cache-dir install \
