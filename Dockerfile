@@ -39,7 +39,6 @@ RUN apt-get update &&\
 
 WORKDIR /src
 
-RUN pip3 --no-cache-dir install -U setuptools
 RUN pip3 --no-cache-dir install tqdm foolbox eagerpy
 RUN pip3 --no-cache-dir install foolbox-native
 RUN pip3 --no-cache-dir install jax jaxlib
@@ -64,7 +63,9 @@ RUN pip3 --no-cache-dir install \
 RUN pip3 --no-cache-dir install \
          torch==1.3.1 \
          torchvision==0.4.2 \
-         jupyterlab
+         jupyterlab \
+         foolbox \
+         foolbox-native
 
 RUN pip3 --no-cache-dir install datajoint==0.12.4
 
