@@ -39,11 +39,11 @@ RUN apt-get update &&\
 
 WORKDIR /src
 
-RUN pip3 install -U setuptools
-RUN pip3 install --upgrade pip==19.0.1
-RUN pip3 install tqdm foolbox eagerpy
-RUN pip3 install foolbox-native
-RUN pip3 install jax jaxlib
+RUN pip3 --no-cache-dir install -U setuptools
+RUN pip3 --no-cache-dir install tqdm foolbox eagerpy
+RUN pip3 --no-cache-dir install foolbox-native
+RUN pip3 --no-cache-dir install jax jaxlib
+
 # Install essential Python packages
 RUN pip3 --no-cache-dir install \
          blackcellmagic\
