@@ -11,6 +11,7 @@ RUN pip3 install torch==1.2.0 torchvision==0.4.0 -f https://download.pytorch.org
 RUN pip3 install numba jax jaxlib
 RUN pip3 install ruamel.yaml
 RUN pip3 install imageio
+RUN pip3 install imageio-ffmpeg
 
 RUN pip3 install numpy==1.17.0
 #RUN pip3 install scipy==1.1.0
