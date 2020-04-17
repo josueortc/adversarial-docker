@@ -15,7 +15,7 @@ RUN pip3 install imageio-ffmpeg
 
 RUN pip3 install numpy==1.17.0
 #RUN pip3 install scipy==1.1.0
-
+RUN pip3 install opencv-python
 # Export port for Jupyter Notebook
 EXPOSE 8888
 
