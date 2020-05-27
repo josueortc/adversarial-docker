@@ -11,7 +11,7 @@ docker run -it -p 8888:8888 --gpus '"device=0"' --mount type=bind,source=/mnt/sa
 ```
 
 Need to select:
-- port <some number>:8888
+- port some number :8888
 - Error: "docker: Error response from daemon: driver failed programming external connectivity on endpoint objective_brown (5da41f088043ba448ffbf29a07d0ae7fb491442b288afcfb0798fdc0d2dbbe6b): Bind for 0.0.0.0:8888 failed: port is already allocated.
 ERRO[0001] error waiting for container: context canceled"
 
