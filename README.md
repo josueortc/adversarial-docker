@@ -16,7 +16,7 @@ Need to select:
 ERRO[0001] error waiting for container: context canceled"
 
 - Means you need to use another port number
--Device: check which GPUs are available
+- Device: check which GPUs are available
 - Mount 1st: Where are you going to save your results. Mine are in the example directory (You can look for my files there).
 - Mount 2nd: To load my notebooks
 
