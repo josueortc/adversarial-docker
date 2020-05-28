@@ -19,7 +19,7 @@ import torchvision
 class Net(nn.Module):
     def __init__(self, classes=2):
         super(Net, self).__init__()
-        #self.core = nn.Sequential(nn.Conv2d(1,32,3,1), nn.ReLU(), nn.Conv2d(32,64,3,1), nn.ReLU(), nn.MaxPool2d(2), nn.Flatten(), nn.Linear(9216,128), 
+        #self.core = nn.Sequential(nn.Conv2d(1,32,3,1), nn.ReLU(), nn.Conv2d(32,64,3,1), nn.ReLU(), nn.MaxPool2d(2), nn.Flatten(), nn.Linear(9216,128),
         #                          nn.ReLU(), nn.Linear(128,2))
         self.core = nn.Sequential(nn.Flatten(), nn.Linear(784,classes))
         #self.conv1 = nn.Conv2d(1, 32, 3, 1)
@@ -45,6 +45,6 @@ def return_model(name='full'):
         model = torch.nn.Sequential(torch.nn.Flatten(),torch.nn.Linear(1*28*28,1000),torch.nn.ReLU(), torch.nn.Linear(1000,10))
     elif name == 'fclinear':
         model = torch.nn.Sequential(torch.nn.Flatten(),torch.nn.Linear(1*28*28,1000), torch.nn.Linear(1000,10))
-    elif model == 'full':
+    elif name == 'full':
         model = nn.Sequential(nn.Conv2d(1,32,3,1), nn.ReLU(), nn.Conv2d(32,64,3,1), nn.ReLU(), nn.MaxPool2d(2), nn.Flatten(), nn.Linear(9216,128), nn.ReLU(), nn.Linear(128,10))
     return model
