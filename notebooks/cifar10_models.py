@@ -64,7 +64,7 @@ class LocallyConnected2d(nn.Module):
             )
         else:
             self.register_parameter('bias', None)
-        #torch.nn.init.xavier_normal_(self.weight)
+        torch.nn.init.normal_(self.weight,mean=0.0,std=0.1)
         self.kernel_size = _pair(kernel_size)
         self.stride = _pair(stride)
 
