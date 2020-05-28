@@ -33,13 +33,12 @@ class Net(nn.Module):
 
 
 class Net3(nn.Module):
-    def __init__(self, classes=10,prop=0.2):
+    def __init__(self, classes=10):
         super(Net, self).__init__()
         self.conv = nn.Conv2d(3,32,3,1,padding=1)
         self.conv1 = nn.Conv2d(32,32,3,1,padding=1)
         self.linear = nn.Linear(30*30*32,10)
         self.flat = nn.Flatten()
-        self.prop = prop
 
     def forward(self, x):
         x1 = self.conv(x)
@@ -320,14 +319,14 @@ def return_model(name='resner18'):
         model = ResNet18()
     elif name == 'vgg':
         model = vgg19_bn()
-    elif model == 'lc':
+    elif name == 'lc':
         model = nn.Sequential(LocallyConnected2d(3,32,30,3,1,bias=True),nn.ReLU(), nn.Flatten(), nn.Linear(30*30*32,10))
-    elif model == 'lck7':
+    elif name == 'lck7':
         model = Net2(kernel_size=7)
-    elif model == 'lck9':
+    elif name == 'lck9':
         model = Net2(kernel_size=9)
-    elif model == 'lck15':
+    elif name == 'lck15':
         model = Net2(kernel_size=15)
-    elif model == 'convresnet':
+    elif name == 'convresnet':
         model = Net3()
     return model
