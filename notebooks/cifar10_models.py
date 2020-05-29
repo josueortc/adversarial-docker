@@ -31,7 +31,37 @@ class Net(nn.Module):
         x = self.linear(x)
         return x
 
+class Net4(nn.Module):
+    def __init__(self, classes=10,prop=0.2):
+        super(Net, self).__init__()
+        self.conv = nn.Conv2d(3,3,32,1)
+        self.linear = nn.Linear(33*33*3,10)
+        self.flat = nn.Flatten()
+        self.prop = prop
 
+    def forward(self, x):
+        x = torch.nn.functional.pad(x,(16,16,16,16),'circular')
+        x = self.conv(x)
+        x = self.flat(x)
+        x = self.linear(x)
+        return x
+
+class Net5(nn.Module):
+    def __init__(self, classes=10,prop=0.2):
+        super(Net, self).__init__()
+        self.conv = nn.Conv2d(3,3,32,1)
+        self.linear = nn.Linear(33*33*3,10)
+        self.flat = nn.Flatten()
+        self.prop = prop
+
+    def forward(self, x):
+        x = torch.nn.functional.pad(x,(16,16,16,16),'circular')
+        x = self.conv(x)
+        x = torch.nn.funtional.relu_(x)
+        x = self.flat(x)
+        x = self.linear(x)
+        return x
+        
 class Net3(nn.Module):
     def __init__(self, classes=10):
         super(Net, self).__init__()
@@ -329,4 +359,8 @@ def return_model(name='resner18'):
         model = Net2(kernel_size=15)
     elif name == 'convresnet':
         model = Net3()
+    elif name == 'circular':
+        model = Net4()
+    elif name == 'circularlinear':
+        model = Net5()
     return model
