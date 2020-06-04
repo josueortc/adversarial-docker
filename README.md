@@ -4,8 +4,9 @@ Example for building and running the Docker (Using Docker 19.03) with nvidia-doc
 ```
 git clone https://github.com/josueortc/adversarial-docker
 cd adversarial-docker
-docker build https://github.com/josueortc/adversarial-docker.git -t adversarial2
-docker run -it -p 8888:8888 --gpus '"device=9"' --mount type=bind,source=/mnt/savefiles/sda/josueortc/adversarial_notebook,destination=/notebooks/local_notebooks --mount type=bind,source=/home/yilong/Github/adversarial-docker/notebooks/,destination=/notebooks/premade_notebooks --mount type=bind,source=/mnt/savefiles/sdb/yilong/adversarial_notebook,destination=/notebooks/new_notebooks --mount type=bind,source=/mnt/savefiles/sda/ryan/,destination=/notebooks/ryan_notebooks --mount type=bind,source=/home/ryan/adversarial-docker/notebooks,destination=/notebooks/alpha_notebooks adversarial
+docker build https://github.com/josueortc/adversarial-docker.git -t adversarial
+docker run -it -p 8888:8888 --gpus '"device=0"' --mount type=bind,source=/mnt/savefiles/sda/josueortc/adversarial_notebook,destination=/notebooks/local_notebooks --mount type=bind,source=/home/josueortc/adversarial-docker/notebooks/,destination=/notebooks/premade_notebooks adversarial
+
 
 ```
 
